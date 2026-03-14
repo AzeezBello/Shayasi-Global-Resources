@@ -6,7 +6,6 @@ export const siteConfig = {
     "Shayasi Global Resources is a diversified Nigerian company specializing in oil and gas, strategic investments, and real estate development, with agricultural expansion through Shayasi Farms.",
   location: "Lagos, Nigeria",
   email: "info@shayasiglobalresources.com",
-  phone: "+234 800 000 0000",
   addressLines: ["AYINKE HOUSE", "120 Mushin Road", "Isolo, Lagos, Nigeria"],
   keywords: [
     "Shayasi Global Resources",
@@ -21,7 +20,6 @@ export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ] as const
 

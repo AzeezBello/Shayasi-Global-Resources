@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, Mail, MapPin } from "lucide-react"
 
 import { navigation, sectors, siteConfig } from "@/lib/seo"
 
@@ -29,13 +29,6 @@ export default function Footer() {
                 >
                   <Mail className="size-4" />
                   {siteConfig.email}
-                </a>
-                <a
-                  href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-2 hover:bg-white/12"
-                >
-                  <Phone className="size-4" />
-                  {siteConfig.phone}
                 </a>
               </div>
 

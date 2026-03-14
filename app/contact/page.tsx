@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Clock3, Mail, MapPin, Phone } from "lucide-react"
+import { Clock3, ExternalLink, Mail, MapPin } from "lucide-react"
 
 import PageHero from "@/components/page-hero"
 import { Button } from "@/components/ui/button"
@@ -19,6 +19,10 @@ const inquiryTopics = [
     description: "Questions about the company, its services, or Shayasi Farms.",
   },
 ] as const
+
+const mapQuery = encodeURIComponent("AYINKE HOUSE, 120 Mushin Road, Isolo, Lagos, Nigeria")
+const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&z=15&output=embed`
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -45,13 +49,10 @@ export default function Contact() {
                 <p className="font-semibold tracking-tight text-foreground">{siteConfig.email}</p>
                 <p className="mt-1 text-sm text-muted-foreground">Email us directly</p>
               </a>
-              <a
-                href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
-                className="block rounded-[1.35rem] border border-border/70 bg-background/75 px-4 py-4"
-              >
-                <p className="font-semibold tracking-tight text-foreground">{siteConfig.phone}</p>
-                <p className="mt-1 text-sm text-muted-foreground">Business phone line</p>
-              </a>
+              <div className="rounded-[1.35rem] border border-border/70 bg-background/75 px-4 py-4">
+                <p className="font-semibold tracking-tight text-foreground">Head office</p>
+                <p className="mt-1 text-sm text-muted-foreground">AYINKE HOUSE, 120 Mushin Road, Isolo, Lagos, Nigeria</p>
+              </div>
             </div>
           </div>
         }
@@ -91,17 +92,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="rounded-[1.4rem] border border-border/70 bg-background/75 p-5">
-                <div className="flex items-start gap-3">
-                  <Phone className="mt-0.5 size-5 text-primary" />
-                  <div>
-                    <p className="font-semibold tracking-tight text-foreground">Phone</p>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      {siteConfig.phone}
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -109,7 +99,9 @@ export default function Contact() {
                 <a href={`mailto:${siteConfig.email}`}>Email the team</a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}>Call the office</a>
+                <a href={mapLink} target="_blank" rel="noreferrer">
+                  Open map
+                </a>
               </Button>
             </div>
           </div>
@@ -137,16 +129,37 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="surface-card p-6 md:p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                Location
-              </p>
-              <p className="mt-4 text-xl font-semibold tracking-tight text-foreground">
-                {siteConfig.location}
-              </p>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                The company operates from Lagos and welcomes relevant business conversations across its core sectors.
-              </p>
+            <div className="surface-card overflow-hidden p-0">
+              <div className="flex items-center justify-between border-b border-border/70 px-6 py-5">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                    Location map
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tracking-tight text-foreground">
+                    {siteConfig.location}
+                  </p>
+                </div>
+
+                <a
+                  href={mapLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                >
+                  Open larger map
+                  <ExternalLink className="size-4" />
+                </a>
+              </div>
+
+              <div className="aspect-[4/3] w-full">
+                <iframe
+                  title="Map showing Shayasi Global Resources office location"
+                  src={mapEmbedSrc}
+                  className="h-full w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </div>
