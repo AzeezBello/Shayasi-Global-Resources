@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
+  icons: {
+    icon: "/Shayasi-icon.png",
+    shortcut: "/Shayasi-icon.png",
+    apple: "/Shayasi-icon.png",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
