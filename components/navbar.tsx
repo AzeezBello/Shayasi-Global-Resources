@@ -22,8 +22,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="surface-card overflow-visible rounded-[2rem] border border-white/75 bg-white/78">
-          <div className="flex items-center justify-between gap-4 px-5 py-3 sm:px-6">
+        <div className="surface-card overflow-hidden rounded-[2rem] border border-white/75 bg-white/78">
+          <div className="flex items-center justify-between gap-4 px-5 py-1 sm:px-6">
             <Link href="/" className="flex min-w-0 items-center" onClick={closeMenu}>
               <span className="flex shrink-0 items-center justify-center">
                 <Image
