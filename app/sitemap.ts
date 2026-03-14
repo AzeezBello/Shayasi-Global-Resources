@@ -1,16 +1,18 @@
-export default function sitemap() {
-  return [
-    {
-      url: "https://shayasiglobalresources.com",
-    },
-    {
-      url: "https://shayasiglobalresources.com/about",
-    },
-    {
-      url: "https://shayasiglobalresources.com/services",
-    },
-    {
-      url: "https://shayasiglobalresources.com/contact",
-    },
-  ]
+import type { MetadataRoute } from "next"
+
+import { siteConfig } from "@/lib/seo"
+
+const routes = [
+  "/",
+  "/about",
+  "/services",
+  "/projects",
+  "/contact",
+  "/subsidiaries/shayasi-farms",
+]
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return routes.map((route) => ({
+    url: `${siteConfig.url}${route === "/" ? "" : route}`,
+  }))
 }
