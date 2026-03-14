@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { ArrowRight, Menu, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { navigation, siteConfig } from "@/lib/seo"
+import { navigation } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
 export default function Navbar() {
@@ -24,26 +24,17 @@ export default function Navbar() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="surface-card overflow-visible rounded-[2rem] border border-white/75 bg-white/78">
           <div className="flex items-center justify-between gap-4 px-5 py-3 sm:px-6">
-            <Link href="/" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border/60 bg-white shadow-lg shadow-black/5">
+            <Link href="/" className="flex min-w-0 items-center" onClick={closeMenu}>
+              <span className="flex shrink-0 items-center justify-center rounded-2xl bg-white/90 px-2 py-1 shadow-sm shadow-black/5">
                 <Image
                   src="/shayasi-logo.png"
                   alt="Shayasi Global Resources logo"
-                  width={48}
-                  height={48}
-                  className="h-full w-full object-cover"
+                  width={224}
+                  height={110}
+                  className="h-auto w-[7.75rem] object-contain sm:w-[8.5rem]"
                   priority
                 />
               </span>
-
-              <div className="min-w-0">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-                  {siteConfig.location}
-                </p>
-                <p className="truncate text-sm font-semibold tracking-tight text-foreground sm:text-base">
-                  {siteConfig.name}
-                </p>
-              </div>
             </Link>
 
             <nav className="hidden items-center gap-1 rounded-full bg-foreground/5 p-1 lg:flex">
