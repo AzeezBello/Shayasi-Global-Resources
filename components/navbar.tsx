@@ -25,14 +25,14 @@ export default function Navbar() {
         <div className="surface-card overflow-visible rounded-[2rem] border border-white/75 bg-white/78">
           <div className="flex items-center justify-between gap-4 px-5 py-3 sm:px-6">
             <Link href="/" className="flex min-w-0 items-center" onClick={closeMenu}>
-              <span className="flex shrink-0 items-center justify-center rounded-[1.35rem] border border-slate-200 bg-white px-3 py-2 shadow-[0_16px_38px_-20px_rgba(15,23,42,0.4)]">
+              <span className="flex shrink-0 items-center justify-center">
                 <Image
                   src="/shayasi-logo.png"
                   alt="Shayasi Global Resources logo"
                   width={224}
                   height={110}
                   quality={100}
-                  className="h-auto w-[8.9rem] object-contain sm:w-[10rem] md:w-[10.75rem]"
+                  className="h-auto w-[7.1rem] object-contain sm:w-[8rem] md:w-[8.75rem]"
                   priority
                 />
               </span>
