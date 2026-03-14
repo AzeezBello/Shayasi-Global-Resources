@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -24,8 +25,15 @@ export default function Navbar() {
         <div className="surface-card overflow-visible rounded-[2rem] border border-white/75 bg-white/78">
           <div className="flex items-center justify-between gap-4 px-5 py-3 sm:px-6">
             <Link href="/" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20">
-                SG
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border/60 bg-white shadow-lg shadow-black/5">
+                <Image
+                  src="/shayasi-logo.png"
+                  alt="Shayasi Global Resources logo"
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-cover"
+                  priority
+                />
               </span>
 
               <div className="min-w-0">
