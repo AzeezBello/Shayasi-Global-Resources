@@ -70,7 +70,7 @@ export default function Contact() {
         }
       />
 
-      <section className="section-shell page-space pt-0">
+      <section className="section-shell page-space pt-3">
         <div className="surface-card overflow-hidden p-0">
           <div className="flex flex-col gap-4 border-b border-border/70 px-6 py-5 md:flex-row md:items-center md:justify-between">
             <div>
