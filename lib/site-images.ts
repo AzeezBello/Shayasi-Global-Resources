@@ -5,22 +5,27 @@ export const siteImages = {
     realEstate: "/images/Real%20estate1.jpeg",
   },
   home: {
-    whoWeAre: "/images/Investment.jpeg",
-    subsidiary: "/images/Farming6.jpeg",
+    whoWeAre: "/images/Oil%20and%20gas4.jpeg",
+    subsidiary: "/images/Farming2.jpeg",
   },
   about: {
-    investment: "/images/Investment1.jpeg",
-    realEstate: "/images/Real%20estate.jpeg",
+    investment: "/images/Oil%20and%20gas.jpeg",
+    realEstate: "/images/Real%20estate3.jpeg",
   },
-  services: {
-    oil: "/images/Oil%20and%20gas2.jpeg",
+  homeServices: {
+    oil: "/images/Oil%20and%20gas1.jpeg",
     investment: "/images/Investment.jpeg",
     realEstate: "/images/Real%20estate.jpeg",
   },
+  servicesPage: {
+    oil: "/images/Oil%20and%20gas2.jpeg",
+    investment: "/images/Farming3.jpeg",
+    realEstate: "/images/Real%20estate2.jpeg",
+  },
   farming: {
     crop: "/images/Farming6.jpeg",
-    livestock: "/images/Farming3.jpeg",
-    trade: "/images/Farming2.jpeg",
+    livestock: "/images/Farming4.jpeg",
+    trade: "/images/Farming5.jpeg",
     banner: "/images/Farming1.jpeg",
   },
 } as const

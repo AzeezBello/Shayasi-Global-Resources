@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { ArrowRight, Clock3, ExternalLink, Mail, MapPin } from "lucide-react"
+import { ArrowRight, Clock3, ExternalLink, Mail, MapPin, Phone } from "lucide-react"
 
 import PageHero from "@/components/page-hero"
 import { Button } from "@/components/ui/button"
@@ -112,7 +112,7 @@ export default function Contact() {
               Contact details
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-              Email remains the best direct route for new conversations, while the office address provides a clear physical point of contact in Lagos.
+              Email and phone both provide a direct route for new conversations, while the office address provides a clear physical point of contact in Lagos.
             </p>
 
             <div className="mt-6 grid gap-4">
@@ -141,11 +141,26 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
+
+              <div className="rounded-[1.4rem] border border-border/70 bg-background/75 p-5">
+                <div className="flex items-start gap-3">
+                  <Phone className="mt-0.5 size-5 text-primary" />
+                  <div>
+                    <p className="font-semibold tracking-tight text-foreground">Contact number</p>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                      {siteConfig.phone}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <a href={`mailto:${siteConfig.email}`}>Email the team</a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href={`tel:${siteConfig.phone}`}>Call the team</a>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <a href={mapLink} target="_blank" rel="noreferrer">
@@ -164,10 +179,24 @@ export default function Contact() {
                 Clear, direct access to the Shayasi team.
               </h2>
               <p className="mt-4 text-sm leading-7 text-white/72">
-                For meaningful conversations, send an email with a short description of the opportunity or inquiry. If location context matters, use the map above to navigate to the office in Isolo, Lagos.
+                For meaningful conversations, send an email with a short description of the opportunity or inquiry, or call directly for a faster point of contact. If location context matters, use the map above to navigate to the office in Isolo, Lagos.
               </p>
 
-              <div className="mt-6 rounded-[1.45rem] border border-white/12 bg-white/8 p-5">
+              <div className="mt-6 grid gap-3">
+                <div className="rounded-[1.45rem] border border-white/12 bg-white/8 p-5">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white/52">
+                    Call directly
+                  </p>
+                  <a
+                    href={`tel:${siteConfig.phone}`}
+                    className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white"
+                  >
+                    {siteConfig.phone}
+                    <ArrowRight className="size-4" />
+                  </a>
+                </div>
+
+                <div className="rounded-[1.45rem] border border-white/12 bg-white/8 p-5">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white/52">
                   Recommended first step
                 </p>
@@ -178,6 +207,7 @@ export default function Contact() {
                   Start with an email inquiry
                   <ArrowRight className="size-4" />
                 </a>
+                </div>
               </div>
             </div>
           </div>

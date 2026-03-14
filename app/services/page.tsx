@@ -11,50 +11,70 @@ const serviceAreas = [
   {
     title: "Oil & Gas",
     description:
-      "The oil and gas industry remains a vital pillar of the Nigerian economy. Shayasi Global Resources participates in this sector through strategic partnerships and energy investment initiatives.",
+      "Shayasi Global Resources Limited operates in the downstream oil and gas sector, focusing on the supply and distribution of refined petroleum products such as petrol, diesel, and gas across Nigeria.",
     highlights: [
-      "Petroleum trading and supply chain operations",
-      "Energy infrastructure investments",
-      "Strategic partnerships in upstream and downstream projects",
-      "Support services for oil and gas operations",
+      "Supply and distribution of petrol, diesel, and gas",
+      "Service to businesses, fuel stations, and government parastatals",
+      "Partnerships with reputable oil depots and trusted suppliers",
+      "Fuel station management and day-to-day operations",
+    ],
+    focusLabel: "Our downstream activities include:",
+    detailParagraphs: [
+      "We serve a wide range of clients, including businesses, fuel stations, and government parastatals, working closely with reputable oil depots and trusted suppliers to ensure a consistent and reliable supply.",
+      "In addition to distribution, we manage and operate fuel stations, overseeing day-to-day operations to maintain efficiency and high-quality service for all customers.",
+      "With a focus on professionalism, operational excellence, and strong partnerships, Shayasi Global Resources Limited is committed to delivering dependable petroleum solutions that create value for our clients and support the energy needs of communities and organizations nationwide.",
     ],
     icon: Factory,
-    image: siteImages.services.oil,
+    image: siteImages.servicesPage.oil,
     alt: "Oil and gas transport and facility operations",
   },
   {
     title: "Investments",
     description:
-      "Our investment division identifies and develops opportunities across various sectors with high growth potential.",
+      "Shayasi Global Resources Limited offers strategic investment opportunities across real estate, agriculture, and the oil and gas sectors, helping investors grow their wealth through carefully selected projects with sustainable long-term returns.",
     highlights: [
-      "Infrastructure development",
-      "Agricultural projects",
-      "Energy and natural resources",
-      "Strategic joint ventures",
-      "Emerging business sectors",
+      "Real estate, agriculture, and oil and gas investment opportunities",
+      "Residential, commercial, and mixed-use property projects",
+      "Productive agricultural projects with long-term return potential",
+      "Downstream oil and gas operations including product distribution and fuel stations",
+      "Tailored opportunities aligned with investor goals",
+    ],
+    focusLabel: "Our investment areas include:",
+    detailParagraphs: [
+      "In real estate, we focus on lands and properties with strong potential for value appreciation. This includes residential, commercial, and mixed-use developments where investors can see both practical and financial benefits.",
+      "In agriculture, we identify projects that are productive and profitable, contributing to food security while generating consistent returns. In the oil and gas sector, our investments focus on downstream operations such as the distribution of petroleum products and management of fuel stations, offering dependable and measurable returns.",
+      "We take a hands-on approach, working closely with our investors to understand their goals and tailor opportunities that fit their needs. Our team monitors investments carefully, ensuring that each project is managed effectively to maximize performance and minimize risk. With a deep understanding of the markets we operate in and a commitment to transparency, professionalism, and practical solutions, Shayasi Global Resources Limited helps investors turn opportunities into lasting value.",
     ],
     icon: TrendingUp,
-    image: siteImages.services.investment,
-    alt: "Investment growth illustration",
+    image: siteImages.servicesPage.investment,
+    alt: "Agricultural and infrastructure investment opportunity",
   },
   {
     title: "Real Estate",
     description:
-      "Real estate development plays a key role in urban expansion and economic growth. Shayasi Global Resources invests in and develops properties designed to meet modern residential and commercial needs.",
+      "Shayasi Global Resources Limited is a real estate company based in Nigeria, committed to providing reliable and professional property services across sales, leasing, rentals, management, and long-term investment.",
     highlights: [
-      "Residential property development",
-      "Commercial property investments",
-      "Land acquisition and development",
-      "Property management",
+      "Buying and selling of lands and buildings",
+      "Leasing and rental of residential and commercial properties",
+      "Property management services",
+      "Property investment for long-term capital appreciation",
+    ],
+    focusLabel: "Our real estate activities include:",
+    detailParagraphs: [
+      "In addition to our real estate services, we also invest in properties, including land and buildings, with the aim of achieving long-term capital appreciation. By carefully identifying promising opportunities in the property market, we seek to create lasting value and support sustainable real estate investments.",
+      "We understand that property decisions are important, whether you are purchasing land, acquiring a building, renting a property, or investing for the future. For this reason, we approach every transaction with professionalism, transparency, and careful attention to our clients' needs.",
+      "Through professionalism, transparency, and a strong understanding of the property market, Shayasi Global Resources Limited continues to provide practical solutions for property ownership, management, and investment.",
     ],
     icon: Building2,
-    image: siteImages.services.realEstate,
+    image: siteImages.servicesPage.realEstate,
     alt: "Modern real estate development property",
   },
 ] satisfies Array<{
   title: string
   description: string
   highlights: string[]
+  focusLabel?: string
+  detailParagraphs?: string[]
   icon: LucideIcon
   image: string
   alt: string
@@ -63,7 +83,7 @@ const serviceAreas = [
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Our services across Oil and Gas Nigeria, investment company Lagos initiatives, and real estate development Nigeria opportunities.",
+    "Our services across Oil and Gas Nigeria, investment company Lagos initiatives, and real estate development Nigeria opportunities including strategic sector investments, downstream petroleum supply, land sales, rentals, management, and property investment.",
 }
 
 export default function ServicesPage() {
@@ -127,7 +147,7 @@ export default function ServicesPage() {
                   </p>
 
                   <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                    Our focus areas include:
+                    {service.focusLabel ?? "Our focus areas include:"}
                   </p>
 
                   <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -140,6 +160,14 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
+
+                  {service.detailParagraphs ? (
+                    <div className="mt-6 space-y-4 text-sm leading-7 text-muted-foreground">
+                      {service.detailParagraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             )
@@ -154,7 +182,7 @@ export default function ServicesPage() {
               Investment approach
             </p>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              By leveraging industry knowledge and partnerships, we aim to build profitable and sustainable investment portfolios.
+              We work closely with investors to match opportunities to their goals, monitor performance carefully, and build transparent portfolios designed for sustainable long-term returns.
             </p>
           </div>
 
@@ -163,7 +191,7 @@ export default function ServicesPage() {
               Real estate objective
             </p>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              Through strategic planning and innovative design, we aim to deliver projects that create long-term value.
+              We combine market understanding, transparency, and disciplined property selection to support ownership, management, and long-term capital appreciation.
             </p>
           </div>
         </div>

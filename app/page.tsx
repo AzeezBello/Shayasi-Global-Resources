@@ -18,9 +18,9 @@ const partnershipReasons = [
 ] as const
 
 const agricultureFocus = [
-  "Crop farming",
-  "Livestock production",
+  "Crop and livestock farming",
   "Agricultural trading",
+  "Export-ready produce",
 ] as const
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/3] w-full">
               <Image
                 src={siteImages.home.whoWeAre}
-                alt="Investment and growth illustration"
+                alt="Industrial operations and logistics"
                 fill
                 sizes="(min-width: 1024px) 28vw, 100vw"
                 className="object-cover"
@@ -90,7 +90,7 @@ export default function HomePage() {
                 Shayasi Farms
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-white/74">
-                Shayasi Farms Limited is the agricultural arm of Shayasi Global Resources. The company focuses on crop farming, livestock production, and agricultural trading, supporting Nigeria&apos;s food security and agribusiness sector.
+                Shayasi Farms Limited is the agricultural arm of Shayasi Global Resources, committed to sustainable and productive agriculture through crop farming, livestock operations, and the trading of high-quality agricultural products for local and international markets.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -118,7 +118,7 @@ export default function HomePage() {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   src={siteImages.home.subsidiary}
-                  alt="Agricultural farmland at Shayasi Farms"
+                  alt="Shayasi Farms crop field"
                   fill
                   sizes="(min-width: 1024px) 28vw, 100vw"
                   className="object-cover"

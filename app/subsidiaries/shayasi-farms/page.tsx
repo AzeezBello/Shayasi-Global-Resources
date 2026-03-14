@@ -13,7 +13,7 @@ const agricultureAreas = [
   {
     title: "Crop Farming",
     description:
-      "We cultivate a variety of crops to support local food production and agricultural supply chains.",
+      "We cultivate crops including soya beans, sorghum, hibiscus, rice, ginger, and more while improving land productivity and supporting reliable agricultural supply chains.",
     icon: Wheat,
     image: siteImages.farming.crop,
     alt: "Crop farming field at Shayasi Farms",
@@ -21,7 +21,7 @@ const agricultureAreas = [
   {
     title: "Livestock Farming",
     description:
-      "Our livestock operations are designed to provide high-quality animal products while maintaining modern farming standards.",
+      "Our livestock operations are managed with care and modern farming practices to deliver reliable, high-quality animal products.",
     icon: Leaf,
     image: siteImages.farming.livestock,
     alt: "Agricultural machinery and farmland",
@@ -29,7 +29,7 @@ const agricultureAreas = [
   {
     title: "Agricultural Trading",
     description:
-      "Shayasi Farms participates in the trading and distribution of agricultural commodities to support local and regional markets.",
+      "We trade high-quality agricultural products for local and regional markets, with selected products such as ginger and hibiscus also reaching international buyers.",
     icon: Warehouse,
     image: siteImages.farming.trade,
     alt: "Agricultural production field supporting trading and supply chains",
@@ -45,7 +45,7 @@ const agricultureAreas = [
 export const metadata: Metadata = {
   title: "Shayasi Farms",
   description:
-    "Shayasi Farms Limited is the agricultural subsidiary of Shayasi Global Resources focused on agriculture investment Nigeria through crop farming, livestock farming, and agricultural trading.",
+    "Shayasi Farms Limited is the agricultural subsidiary of Shayasi Global Resources focused on sustainable agriculture investment Nigeria through crop farming, livestock farming, agricultural trading, and export-ready produce.",
 }
 
 export default function ShayasiFarmsPage() {
@@ -53,8 +53,8 @@ export default function ShayasiFarmsPage() {
     <main className="pb-8 md:pb-12">
       <PageHero
         eyebrow="Shayasi Farms"
-        title="An agricultural subsidiary focused on agribusiness development and food production in Nigeria."
-        description="Shayasi Farms Limited is the agricultural subsidiary of Shayasi Global Resources, focused on advancing agribusiness development and food production in Nigeria."
+        title="Sustainable and productive agriculture rooted in quality, community impact, and long-term value."
+        description="Shayasi Global Resources Limited is committed to crop and livestock farming, as well as the trading of high-quality agricultural products that support local communities and provide reliable produce."
         aside={
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
@@ -79,10 +79,13 @@ export default function ShayasiFarmsPage() {
         <div className="max-w-3xl">
           <span className="eyebrow">Overview</span>
           <h2 className="mt-5 section-title text-balance">
-            Established to support sustainable agriculture and economic empowerment.
+            Agriculture and farming designed to be productive, responsible, and market-ready.
           </h2>
           <p className="mt-4 lead-copy">
-            Established to support sustainable agriculture and economic empowerment, Shayasi Farms operates across several areas of agricultural production and trading.
+            Shayasi Global Resources Limited is committed to sustainable and productive agriculture through crop farming, livestock farming, and the trading of high-quality agricultural products.
+          </p>
+          <p className="mt-4 lead-copy">
+            Our farms cultivate a variety of crops including soya beans, sorghum, hibiscus, rice, ginger, and more. We focus on improving the productivity of the land while preserving its natural value and maintaining the nutritional quality of the food we produce.
           </p>
         </div>
 
@@ -140,14 +143,17 @@ export default function ShayasiFarmsPage() {
               </div>
               <span className="eyebrow border-white/15 bg-white/8 text-white/70">Our Commitment to Agriculture</span>
               <h2 className="mt-5 section-title text-white">
-                Sustainable farming, stronger productivity, and support for food security in Nigeria.
+                Modern farming, export-ready produce, and positive impact for communities we serve.
               </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/74">
+                Selected products such as ginger and hibiscus are also exported, bringing the best of Nigerian agriculture to international markets through careful management and quality-focused operations.
+              </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {[
-                  "Sustainable farming practices",
-                  "Improving agricultural productivity",
-                  "Supporting local communities",
-                  "Contributing to food security in Nigeria",
+                  "Sustainable crop and livestock farming",
+                  "Improving land productivity while preserving natural value",
+                  "Supporting local communities with reliable produce",
+                  "High-quality products for local and export markets",
                 ].map((item) => (
                   <div
                     key={item}
@@ -173,7 +179,7 @@ export default function ShayasiFarmsPage() {
                 Our Vision for Agriculture
               </p>
               <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                To build a modern agribusiness enterprise that supports agricultural innovation, food security, and economic development.
+                To build a modern agribusiness enterprise that supports agricultural innovation, food security, export growth, and economic development.
               </p>
             </div>
 
@@ -185,7 +191,7 @@ export default function ShayasiFarmsPage() {
                 Partnership Opportunities
               </h3>
               <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                We welcome collaboration with investors, agricultural experts, and development partners who share our vision for building a strong and sustainable agricultural sector.
+                We welcome collaboration with investors, agricultural experts, buyers, and development partners who share our vision for building a strong, sustainable, and market-ready agricultural sector.
               </p>
             </div>
           </div>

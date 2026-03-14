@@ -11,28 +11,28 @@ const services = [
   {
     title: "Oil & Gas",
     description:
-      "We participate in the oil and gas value chain through strategic partnerships, supply chain services, and energy investment opportunities.",
+      "We operate in the downstream oil and gas sector, supplying and distributing refined petroleum products including petrol, diesel, and gas across Nigeria.",
     icon: Factory,
-    points: ["Strategic partnerships", "Supply chain services", "Energy investment opportunities"],
-    image: siteImages.services.oil,
+    points: ["Petrol, diesel, and gas supply", "Fuel station operations", "Reliable nationwide distribution"],
+    image: siteImages.homeServices.oil,
     alt: "Oil and gas infrastructure and logistics",
   },
   {
     title: "Investments",
     description:
-      "Our investment division focuses on identifying high-potential ventures across infrastructure, agriculture, and emerging industries.",
+      "We offer strategic investment opportunities across real estate, agriculture, and the downstream oil and gas sector with a focus on sustainable long-term returns.",
     icon: TrendingUp,
-    points: ["Infrastructure", "Agriculture", "Emerging industries"],
-    image: siteImages.services.investment,
+    points: ["Real estate and land opportunities", "Agriculture and agribusiness", "Downstream energy investments"],
+    image: siteImages.homeServices.investment,
     alt: "Investment growth visual",
   },
   {
     title: "Real Estate",
     description:
-      "We develop and invest in residential, commercial, and mixed-use real estate projects that support urban growth and economic development.",
+      "We provide reliable property services across the buying and selling of lands and buildings, leasing, rentals, management, and long-term real estate investment.",
     icon: Building2,
-    points: ["Residential", "Commercial", "Mixed-use"],
-    image: siteImages.services.realEstate,
+    points: ["Land and building sales", "Leasing and rentals", "Property management"],
+    image: siteImages.homeServices.realEstate,
     alt: "Modern residential real estate development",
   },
 ] satisfies Array<{
