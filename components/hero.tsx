@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, MapPin, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { companyMetrics, siteConfig } from "@/lib/seo"
+import { companyMetrics } from "@/lib/seo"
 import { siteImages } from "@/lib/site-images"
 
 const focusAreas = [
@@ -161,20 +161,15 @@ export default function Hero() {
 
             <div className="surface-card p-6 md:p-7 fade-in-up" style={{ animationDelay: "320ms" }}>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                Head office
+                Operating approach
               </p>
 
-              <div className="mt-4 flex items-start gap-3 text-foreground/80">
-                <MapPin className="mt-1 size-4 shrink-0 text-primary" />
-                <div className="space-y-1">
-                  {siteConfig.addressLines.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
-                </div>
-              </div>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
+                Partnerships, disciplined execution, and long-view growth.
+              </h2>
 
               <p className="mt-5 rounded-[1.35rem] border border-border/70 bg-background/70 px-4 py-4 text-sm leading-7 text-muted-foreground">
-                Operating from our head office in Lagos, Shayasi Global Resources works with industry partners and stakeholders to develop projects that create value, promote economic growth, and support national development.
+                Shayasi Global Resources works with industry partners and stakeholders to develop projects that create value, promote economic growth, and support long-term national development.
               </p>
             </div>
           </div>

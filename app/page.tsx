@@ -1,13 +1,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle2, MapPin, Target } from "lucide-react"
+import { ArrowRight, CheckCircle2, Target } from "lucide-react"
 
 import CtaBanner from "@/components/cta-banner"
 import Hero from "@/components/hero"
 import ServicesGrid from "@/components/services"
 import { Button } from "@/components/ui/button"
-import { siteConfig } from "@/lib/seo"
 import { siteImages } from "@/lib/site-images"
 
 const partnershipReasons = [
@@ -46,7 +45,7 @@ export default function HomePage() {
               Shayasi Global Resources is a forward-looking company committed to developing opportunities across energy, infrastructure, and agriculture. With a strong focus on strategic partnerships and sustainable investment models, the company continues to expand its footprint across key sectors of the Nigerian economy.
             </p>
             <p className="mt-4 lead-copy">
-              Operating from our head office in Lagos, Shayasi Global Resources works with industry partners and stakeholders to develop projects that create value, promote economic growth, and support national development.
+              Through industry partnerships, disciplined execution, and a long-term view of growth, the company continues to build projects and opportunities that create value, promote economic development, and support national progress.
             </p>
           </div>
 
@@ -63,17 +62,12 @@ export default function HomePage() {
             </div>
 
             <div className="p-6 md:p-7">
-              <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
-                <MapPin className="size-5" />
-              </div>
-              <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
-                Head Office
+              <h3 className="text-xl font-semibold tracking-tight text-foreground">
+                Strategic outlook
               </h3>
-              <div className="mt-4 space-y-1 text-sm leading-7 text-muted-foreground">
-                {siteConfig.addressLines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                Shayasi Global Resources continues to expand across high-impact sectors with a focus on practical execution, partnership-led growth, and long-term value creation.
+              </p>
             </div>
           </div>
         </div>
