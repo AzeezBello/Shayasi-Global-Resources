@@ -80,40 +80,40 @@ export default function HomePage() {
       </section>
 
       <section className="section-shell page-space pt-0">
-        <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="dark-panel p-8 md:p-10">
-            <div className="relative z-10">
-              <span className="eyebrow border-white/15 bg-white/8 text-white/70">
-                Our subsidiary
-              </span>
-              <h2 className="mt-5 section-title text-white">
-                Shayasi Farms
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-white/74">
-                Shayasi Farms Limited is the agricultural arm of Shayasi Global Resources, committed to sustainable and productive agriculture through crop farming, livestock operations, and the trading of high-quality agricultural products for local and international markets.
-              </p>
+        <div className="grid gap-5">
+          <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="dark-panel p-8 md:p-10">
+              <div className="relative z-10">
+                <span className="eyebrow border-white/15 bg-white/8 text-white/70">
+                  Our subsidiary
+                </span>
+                <h2 className="mt-5 section-title text-white">
+                  Shayasi Farms
+                </h2>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-white/74">
+                  Shayasi Farms Limited is the agricultural arm of Shayasi Global Resources, committed to sustainable and productive agriculture through crop farming, livestock operations, and the trading of high-quality agricultural products for local and international markets.
+                </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {agricultureFocus.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1.4rem] border border-white/12 bg-white/8 px-4 py-4 text-sm text-white/80"
-                  >
-                    {item}
-                  </div>
-                ))}
+                <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                  {agricultureFocus.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-[1.4rem] border border-white/12 bg-white/8 px-4 py-4 text-sm text-white/80"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                <Button asChild variant="secondary" size="lg" className="mt-8">
+                  <Link href="/subsidiaries/shayasi-farms">
+                    Learn More About Shayasi Farms
+                    <ArrowRight />
+                  </Link>
+                </Button>
               </div>
-
-              <Button asChild variant="secondary" size="lg" className="mt-8">
-                <Link href="/subsidiaries/shayasi-farms">
-                  Learn More About Shayasi Farms
-                  <ArrowRight />
-                </Link>
-              </Button>
             </div>
-          </div>
 
-          <div className="grid gap-4">
             <div className="surface-card overflow-hidden p-0">
               <div className="relative aspect-[4/3] w-full">
                 <Image
@@ -138,22 +138,28 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="surface-card p-6 md:p-7">
+          <div className="surface-card p-6 md:p-7">
+            <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Why Partner With Shayasi
               </p>
-              <div className="mt-6 space-y-3">
-                {partnershipReasons.map((reason) => (
-                  <div
-                    key={reason}
-                    className="flex items-center gap-3 rounded-2xl border border-border/70 bg-background/70 px-4 py-3 text-sm font-medium text-foreground"
-                  >
-                    <CheckCircle2 className="size-4 text-primary" />
-                    {reason}
-                  </div>
-                ))}
-              </div>
+              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
+                A broader platform for long-term, sector-led growth.
+              </h3>
+            </div>
+
+            <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {partnershipReasons.map((reason) => (
+                <div
+                  key={reason}
+                  className="flex items-center gap-3 rounded-2xl border border-border/70 bg-background/70 px-4 py-4 text-sm font-medium text-foreground"
+                >
+                  <CheckCircle2 className="size-4 text-primary" />
+                  {reason}
+                </div>
+              ))}
             </div>
           </div>
         </div>
