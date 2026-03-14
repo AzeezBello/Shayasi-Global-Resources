@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import type { LucideIcon } from "lucide-react"
 import { Building2, Factory, TrendingUp } from "lucide-react"
 
 import CtaBanner from "@/components/cta-banner"
 import PageHero from "@/components/page-hero"
+import { siteImages } from "@/lib/site-images"
 
 const serviceAreas = [
   {
@@ -17,6 +19,8 @@ const serviceAreas = [
       "Support services for oil and gas operations",
     ],
     icon: Factory,
+    image: siteImages.services.oil,
+    alt: "Oil and gas transport and facility operations",
   },
   {
     title: "Investments",
@@ -30,6 +34,8 @@ const serviceAreas = [
       "Emerging business sectors",
     ],
     icon: TrendingUp,
+    image: siteImages.services.investment,
+    alt: "Investment growth illustration",
   },
   {
     title: "Real Estate",
@@ -42,12 +48,16 @@ const serviceAreas = [
       "Property management",
     ],
     icon: Building2,
+    image: siteImages.services.realEstate,
+    alt: "Modern real estate development property",
   },
 ] satisfies Array<{
   title: string
   description: string
   highlights: string[]
   icon: LucideIcon
+  image: string
+  alt: string
 }>
 
 export const metadata: Metadata = {
@@ -91,33 +101,45 @@ export default function ServicesPage() {
             return (
               <div
                 key={service.title}
-                className="surface-card p-6 md:p-7 fade-in-up"
+                className="surface-card overflow-hidden p-0 fade-in-up"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
-                  <Icon className="size-5" />
+                <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/68 via-slate-950/8 to-transparent" />
+                  <div className="absolute left-5 top-5 inline-flex rounded-full bg-white/14 p-3 text-white backdrop-blur-sm">
+                    <Icon className="size-5" />
+                  </div>
                 </div>
 
-                <h2 className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
-                  {service.title}
-                </h2>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  {service.description}
-                </p>
+                <div className="p-6 md:p-7">
+                  <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+                    {service.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {service.description}
+                  </p>
 
-                <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  Our focus areas include:
-                </p>
+                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                    Our focus areas include:
+                  </p>
 
-                <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                  {service.highlights.map((highlight) => (
-                    <div
-                      key={highlight}
-                      className="rounded-2xl border border-border/60 bg-background/80 px-4 py-3 text-sm text-foreground"
-                    >
-                      {highlight}
-                    </div>
-                  ))}
+                  <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                    {service.highlights.map((highlight) => (
+                      <div
+                        key={highlight}
+                        className="rounded-2xl border border-border/60 bg-background/80 px-4 py-3 text-sm text-foreground"
+                      >
+                        {highlight}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )

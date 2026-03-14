@@ -1,9 +1,11 @@
+import Image from "next/image"
 import Link from "next/link"
 import type { LucideIcon } from "lucide-react"
 import { ArrowRight, Building2, Factory, TrendingUp } from "lucide-react"
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { siteImages } from "@/lib/site-images"
 
 const services = [
   {
@@ -12,6 +14,8 @@ const services = [
       "We participate in the oil and gas value chain through strategic partnerships, supply chain services, and energy investment opportunities.",
     icon: Factory,
     points: ["Strategic partnerships", "Supply chain services", "Energy investment opportunities"],
+    image: siteImages.services.oil,
+    alt: "Oil and gas infrastructure and logistics",
   },
   {
     title: "Investments",
@@ -19,6 +23,8 @@ const services = [
       "Our investment division focuses on identifying high-potential ventures across infrastructure, agriculture, and emerging industries.",
     icon: TrendingUp,
     points: ["Infrastructure", "Agriculture", "Emerging industries"],
+    image: siteImages.services.investment,
+    alt: "Investment growth visual",
   },
   {
     title: "Real Estate",
@@ -26,12 +32,16 @@ const services = [
       "We develop and invest in residential, commercial, and mixed-use real estate projects that support urban growth and economic development.",
     icon: Building2,
     points: ["Residential", "Commercial", "Mixed-use"],
+    image: siteImages.services.realEstate,
+    alt: "Modern residential real estate development",
   },
 ] satisfies Array<{
   title: string
   description: string
   icon: LucideIcon
   points: string[]
+  image: string
+  alt: string
 }>
 
 export default function ServicesGrid() {
@@ -63,16 +73,24 @@ export default function ServicesGrid() {
           return (
             <Card
               key={service.title}
-              className="fade-in-up border-white/70 bg-white/78"
+              className="fade-in-up overflow-hidden border-white/70 bg-white/78"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="px-6 pt-6">
-                <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.alt}
+                  fill
+                  sizes="(min-width: 1024px) 22vw, (min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover/card:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/72 via-slate-950/10 to-transparent" />
+                <div className="absolute left-5 top-5 inline-flex rounded-full bg-white/14 p-3 text-white backdrop-blur-sm">
                   <Icon className="size-5" />
                 </div>
               </div>
 
-              <div className="px-6 pb-6">
+              <div className="px-6 pb-6 pt-5">
                 <h3 className="text-2xl font-semibold tracking-tight text-foreground">
                   {service.title}
                 </h3>

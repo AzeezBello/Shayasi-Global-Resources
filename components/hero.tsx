@@ -1,8 +1,10 @@
+import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, MapPin, ShieldCheck, Sparkles } from "lucide-react"
+import { ArrowRight, MapPin, Sparkles } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { companyMetrics, siteConfig } from "@/lib/seo"
+import { siteImages } from "@/lib/site-images"
 
 const focusAreas = [
   "Oil & Gas",
@@ -90,34 +92,69 @@ export default function Hero() {
           </div>
 
           <div className="relative z-10 grid gap-4 lg:grid-rows-[minmax(0,1fr)_auto]">
-            <div className="dark-panel p-6 md:p-7 fade-in-up" style={{ animationDelay: "220ms" }}>
-              <div className="relative z-10">
-                <div className="inline-flex rounded-full border border-white/12 bg-white/8 p-3 text-white">
-                  <ShieldCheck className="size-5" />
-                </div>
-
-                <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-white/58">
-                  Why Shayasi
-                </p>
-                <h2 className="mt-3 text-[1.7rem] font-semibold tracking-tight text-white md:text-[2rem]">
-                  Innovation, partnerships, and long-term sector vision.
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-white/74">
-                  Built around industries that influence growth, infrastructure, and sustainable value creation across Nigeria.
-                </p>
-
-                <div className="mt-6 grid gap-3">
-                  {focusAreas.map((area, index) => (
-                    <div
-                      key={area}
-                      className="flex items-center gap-4 rounded-[1.35rem] border border-white/12 bg-white/8 px-4 py-4"
-                    >
-                      <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-white/45">
-                        {String(index + 1).padStart(2, "0")}
+            <div className="grid gap-4 sm:grid-cols-2 fade-in-up" style={{ animationDelay: "220ms" }}>
+              <div className="relative min-h-[320px] overflow-hidden rounded-[1.9rem] border border-white/70 shadow-[0_24px_80px_-36px_rgba(15,23,42,0.38)] sm:col-span-2 md:min-h-[360px]">
+                <Image
+                  src={siteImages.hero.oil}
+                  alt="Oil and gas logistics operations"
+                  fill
+                  sizes="(min-width: 1024px) 34vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/78 via-slate-950/20 to-transparent" />
+                <div className="absolute inset-x-5 bottom-5 rounded-[1.45rem] border border-white/12 bg-slate-950/45 p-5 backdrop-blur-md">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-white/58">
+                    Core sectors
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {focusAreas.map((area) => (
+                      <span
+                        key={area}
+                        className="rounded-full border border-white/12 bg-white/10 px-3 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/76"
+                      >
+                        {area}
                       </span>
-                      <p className="text-sm font-medium text-white/84">{area}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative min-h-[190px] overflow-hidden rounded-[1.75rem] border border-white/70 shadow-[0_24px_80px_-36px_rgba(15,23,42,0.38)]">
+                <Image
+                  src={siteImages.hero.investment}
+                  alt="Investment growth concept"
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                <div className="absolute inset-x-4 bottom-4">
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/62">
+                    Investments
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-white/84">
+                    Capital positioning for long-term value.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative min-h-[190px] overflow-hidden rounded-[1.75rem] border border-white/70 shadow-[0_24px_80px_-36px_rgba(15,23,42,0.38)]">
+                <Image
+                  src={siteImages.hero.realEstate}
+                  alt="Premium real estate development"
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                <div className="absolute inset-x-4 bottom-4">
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/62">
+                    Real Estate
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-white/84">
+                    Built environments that support growth.
+                  </p>
                 </div>
               </div>
             </div>

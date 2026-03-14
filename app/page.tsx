@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, MapPin, Target } from "lucide-react"
 
@@ -7,6 +8,7 @@ import Hero from "@/components/hero"
 import ServicesGrid from "@/components/services"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/seo"
+import { siteImages } from "@/lib/site-images"
 
 const partnershipReasons = [
   "Strategic industry expertise",
@@ -48,17 +50,30 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="surface-card p-6 md:p-7">
-            <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
-              <MapPin className="size-5" />
+          <div className="surface-card overflow-hidden p-0">
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={siteImages.home.whoWeAre}
+                alt="Investment and growth illustration"
+                fill
+                sizes="(min-width: 1024px) 28vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/72 via-slate-950/10 to-transparent" />
             </div>
-            <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
-              Head Office
-            </h3>
-            <div className="mt-4 space-y-1 text-sm leading-7 text-muted-foreground">
-              {siteConfig.addressLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+
+            <div className="p-6 md:p-7">
+              <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
+                <MapPin className="size-5" />
+              </div>
+              <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
+                Head Office
+              </h3>
+              <div className="mt-4 space-y-1 text-sm leading-7 text-muted-foreground">
+                {siteConfig.addressLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -99,16 +114,29 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-4">
-            <div className="surface-card p-6 md:p-7">
-              <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
-                <Target className="size-5" />
+            <div className="surface-card overflow-hidden p-0">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={siteImages.home.subsidiary}
+                  alt="Agricultural farmland at Shayasi Farms"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/68 via-slate-950/10 to-transparent" />
               </div>
-              <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
-                Our Vision
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                To become a trusted Nigerian enterprise recognized for excellence in energy, investments, real estate, and agribusiness development.
-              </p>
+
+              <div className="p-6 md:p-7">
+                <div className="inline-flex rounded-full bg-primary/10 p-3 text-primary">
+                  <Target className="size-5" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
+                  Our Vision
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  To become a trusted Nigerian enterprise recognized for excellence in energy, investments, real estate, and agribusiness development.
+                </p>
+              </div>
             </div>
 
             <div className="surface-card p-6 md:p-7">

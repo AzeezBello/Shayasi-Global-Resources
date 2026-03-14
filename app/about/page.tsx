@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
 import CtaBanner from "@/components/cta-banner"
 import PageHero from "@/components/page-hero"
 import { companyMetrics } from "@/lib/seo"
+import { siteImages } from "@/lib/site-images"
 
 const coreValues = [
   {
@@ -77,6 +79,28 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-white/70 shadow-[0_24px_80px_-36px_rgba(15,23,42,0.38)]">
+                <Image
+                  src={siteImages.about.investment}
+                  alt="Investment growth and capital market imagery"
+                  fill
+                  sizes="(min-width: 1024px) 16vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-white/70 shadow-[0_24px_80px_-36px_rgba(15,23,42,0.38)]">
+                <Image
+                  src={siteImages.about.realEstate}
+                  alt="Modern real estate development project"
+                  fill
+                  sizes="(min-width: 1024px) 16vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
             <div className="surface-card p-6 md:p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Our Mission
