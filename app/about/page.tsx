@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import type { LucideIcon } from "lucide-react"
 import { Building2, Factory, Handshake, Sprout, TrendingUp } from "lucide-react"
 
 import CtaBanner from "@/components/cta-banner"
 import PageHero from "@/components/page-hero"
+import { buildPageMetadata } from "@/lib/seo"
 import { siteImages } from "@/lib/site-images"
 
 const businessAreas = [
@@ -50,11 +50,12 @@ const approachPillars = [
   "Transparency, excellence, and long-term value creation",
 ] as const
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About",
   description:
     "About Shayasi Global Resources Limited, a diversified Nigerian company delivering real estate, investment, agriculture, and oil and gas solutions with professionalism and long-term value.",
-}
+  path: "/about",
+})
 
 export default function AboutPage() {
   return (

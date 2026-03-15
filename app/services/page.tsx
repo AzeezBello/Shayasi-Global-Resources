@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import type { LucideIcon } from "lucide-react"
 import { Building2, Factory, TrendingUp } from "lucide-react"
 
 import CtaBanner from "@/components/cta-banner"
 import PageHero from "@/components/page-hero"
+import { buildPageMetadata } from "@/lib/seo"
 import { siteImages } from "@/lib/site-images"
 
 const serviceAreas = [
@@ -80,11 +80,12 @@ const serviceAreas = [
   alt: string
 }>
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Services",
   description:
     "Our services across Oil and Gas Nigeria, investment company Lagos initiatives, and real estate development Nigeria opportunities including strategic sector investments, downstream petroleum supply, land sales, rentals, management, and property investment.",
-}
+  path: "/services",
+})
 
 export default function ServicesPage() {
   return (

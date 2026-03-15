@@ -1,9 +1,8 @@
-import type { Metadata } from "next"
 import { ArrowRight, Clock3, ExternalLink, Mail, MapPin, Phone } from "lucide-react"
 
 import PageHero from "@/components/page-hero"
 import { Button } from "@/components/ui/button"
-import { siteConfig } from "@/lib/seo"
+import { buildPageMetadata, siteConfig } from "@/lib/seo"
 
 const inquiryTopics = [
   {
@@ -20,14 +19,17 @@ const inquiryTopics = [
   },
 ] as const
 
-const mapQuery = encodeURIComponent("AYINKE HOUSE, 120 Mushin Road, Isolo, Lagos, Nigeria")
-const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&z=15&output=embed`
+const mapQuery = encodeURIComponent("Shayasi Global Resources, 120 Mushin Road, Isolo, Lagos, Nigeria")
+const mapEmbedSrc =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.943184736708!2d3.3174843094497497!3d6.528860323076085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8f23c71df7d7%3A0xc648a7c62b093129!2sShayasi%20Global%20Resources!5e0!3m2!1sen!2sng!4v1773579163272!5m2!1sen!2sng"
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact",
-  description: "Contact Shayasi Global Resources in Lagos, Nigeria for business inquiries and partnership discussions.",
-}
+  description:
+    "Contact Shayasi Global Resources in Lagos, Nigeria for business inquiries and partnership discussions.",
+  path: "/contact",
+})
 
 export default function Contact() {
   return (

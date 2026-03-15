@@ -1,4 +1,3 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import type { LucideIcon } from "lucide-react"
 import { ArrowRight, Leaf, Users, Warehouse, Wheat } from "lucide-react"
@@ -7,6 +6,7 @@ import Link from "next/link"
 import CtaBanner from "@/components/cta-banner"
 import PageHero from "@/components/page-hero"
 import { Button } from "@/components/ui/button"
+import { buildPageMetadata } from "@/lib/seo"
 import { siteImages } from "@/lib/site-images"
 
 const agricultureAreas = [
@@ -42,11 +42,12 @@ const agricultureAreas = [
   alt: string
 }>
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Shayasi Farms",
   description:
     "Shayasi Farms Limited is the agricultural subsidiary of Shayasi Global Resources focused on sustainable agriculture investment Nigeria through crop farming, livestock farming, agricultural trading, and export-ready produce.",
-}
+  path: "/subsidiaries/shayasi-farms",
+})
 
 export default function ShayasiFarmsPage() {
   return (

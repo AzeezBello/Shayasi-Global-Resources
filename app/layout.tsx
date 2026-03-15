@@ -4,7 +4,7 @@ import { Fraunces, Manrope } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { siteConfig } from "@/lib/seo"
+import { siteConfig, structuredData } from "@/lib/seo"
 
 const bodyFont = Manrope({
   subsets: ["latin"],
@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
+  alternates: {
+    canonical: siteConfig.url,
+  },
   icons: {
     icon: "/Shayasi-icon.png",
     shortcut: "/Shayasi-icon.png",
@@ -44,12 +47,27 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${displayFont.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <div className="site-chrome" aria-hidden="true">
           <div className="site-orb site-orb-left" />
           <div className="site-orb site-orb-right" />

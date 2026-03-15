@@ -1,4 +1,3 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, Target } from "lucide-react"
@@ -7,6 +6,7 @@ import CtaBanner from "@/components/cta-banner"
 import Hero from "@/components/hero"
 import ServicesGrid from "@/components/services"
 import { Button } from "@/components/ui/button"
+import { buildPageMetadata } from "@/lib/seo"
 import { siteImages } from "@/lib/site-images"
 
 const partnershipReasons = [
@@ -22,11 +22,12 @@ const agricultureFocus = [
   "Export-ready produce",
 ] as const
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Powering Energy, Investments & Sustainable Development",
   description:
     "Shayasi Global Resources is a diversified Nigerian company specializing in Oil and Gas Nigeria, investment company Lagos services, real estate development Nigeria projects, and agriculture investment Nigeria through Shayasi Farms.",
-}
+  path: "/",
+})
 
 export default function HomePage() {
   return (
